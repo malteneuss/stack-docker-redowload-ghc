@@ -1,0 +1,4 @@
+CREATE USER workler;
+
+CREATE DATABASE workler;
+GRANT ALL PRIVILEGES ON DATABASE workler TO workler;
