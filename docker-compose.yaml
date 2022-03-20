@@ -11,5 +11,16 @@ services:
     volumes:
       - db:/var/lib/postgresql/data
       - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
+  app:
+    build:
+      context: .
+      args:
+        - BINARY_PATH
+    image: malteneuss/workler
+#    depends_on:
+#      - db
+#    command: /opt/myapp/workler
+    ports:
+      - '3000:3000'
 volumes:
   db:
